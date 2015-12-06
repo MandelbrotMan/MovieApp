@@ -1,6 +1,7 @@
 package com.example.raymondlian.movieappv2;
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -129,8 +130,7 @@ public class Main2ActivityFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
 
-                final Intent i = new Intent(getActivity(), Main2Activity.class);
-                final Intent i2 = new Intent(getActivity(), MovieDetailActivityFragment.class);
+                final Intent i = new Intent(getActivity(), MovieDetailActivityFragment.class);
 
                 //Prepare information to be sent to the next activity
                 Bundle moviePackage = new Bundle();
@@ -157,9 +157,15 @@ public class Main2ActivityFragment extends Fragment {
 
 
                 }
-                i.putExtras(moviePackage);
-                i2.putExtras(moviePackage);
-                startActivity(i);
+
+                Fragment newFragment = new MovieDetailActivityFragment();
+
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragmentfirst, newFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+
+
 
             }
         });
