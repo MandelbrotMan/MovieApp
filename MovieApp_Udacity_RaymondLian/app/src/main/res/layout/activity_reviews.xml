@@ -1,5 +1,11 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/fragment"
-    android:name="com.example.raymondlian.movieappv2.ReviewsActivityFragment"
-    tools:layout="@layout/fragment_reviews" android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_review"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ListView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/ReviewsListView"
+    >
+</ListView>
+</FrameLayout>

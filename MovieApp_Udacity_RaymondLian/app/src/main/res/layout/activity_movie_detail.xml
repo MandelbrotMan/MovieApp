@@ -1,5 +1,76 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/fragment"
-    android:name="com.example.raymondlian.movieappv2.MovieDetailActivityFragment"
-    tools:layout="@layout/fragment_movie_detail" android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout  android:layout_width="match_parent"
+        android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.example.raymondlian.movieappv2.MovieDetailActivityFragment">
+
+
+        <TextView android:text="Title" android:layout_width="match_parent"
+            android:id="@+id/movieTitleText"
+            android:layout_height="20dp"
+            />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="175dp"
+            android:id="@+id/posterImageView"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/movieTitleText"/>
+        <TextView android:text="Release Date" android:layout_width="wrap_content"
+            android:id="@+id/releaseDateText"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/posterImageView"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="10dp" />
+        <TextView android:text="Average Rating" android:layout_width="wrap_content"
+            android:id="@+id/voteAverageText"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/releaseDateText"
+            android:layout_toRightOf="@+id/posterImageView"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp" />
+
+        <TextView android:text="Plot" android:layout_width="wrap_content"
+            android:layout_below="@+id/posterImageView"
+            android:layout_marginTop="5dp"
+            android:id="@+id/synopsisText"
+            android:layout_height="wrap_content"
+            />
+        <TextView android:text="Trailers" android:layout_width="wrap_content"
+            android:layout_below="@+id/synopsisText"
+            android:layout_marginTop="5dp"
+            android:id="@+id/trailerListText"
+            android:layout_height="wrap_content"
+            />
+        <ListView
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/trailerListView"
+            android:layout_below="@+id/trailerListText">
+        </ListView>
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/favoriteButton"
+            android:layout_toRightOf="@+id/posterImageView"
+            android:layout_below="@+id/reviewButton"/>
+        <Button
+            android:layout_width= "wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Reviews"
+            android:id="@+id/reviewButton"
+            android:layout_toRightOf="@+id/posterImageView"
+            android:layout_below="@+id/voteAverageText"/>
+
+    </RelativeLayout>
+</ScrollView>
