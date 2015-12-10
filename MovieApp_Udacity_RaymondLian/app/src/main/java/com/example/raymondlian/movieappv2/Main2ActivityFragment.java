@@ -158,13 +158,13 @@ public class Main2ActivityFragment extends Fragment {
 
                 }
 
-                MovieDetailActivityFragment nextFrag= new MovieDetailActivityFragment();
-                Fragment newFragment = new MovieDetailActivityFragment();
+               
+               Main2ActivityFragment newFragment = new Main2ActivityFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
 // Replace whatever is in the fragment_container view with this fragment,
 // and add the transaction to the back stack
-                transaction.replace(R.id.fragmentMain, newFragment);
+                transaction.remove(newFragment);
                 transaction.addToBackStack(null);
 
 // Commit the transaction
